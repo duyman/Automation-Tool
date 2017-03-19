@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.transitions.hamburger.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+
+<StackPane fx:id="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+   	<!-- Header -->
+   	<BorderPane>
+   		<top>
+   			<VBox spacing="20">
+      			<children>
+      				<JFXToolbar>
+      					<leftItems>
+      						<JFXRippler maskType="CIRCLE" style="-fx-ripple-color:WHITE;">
+         						<control>
+         							<StackPane fx:id="titleBurgerContainer">
+            							<children>
+            								<JFXHamburger fx:id="titleBurger">
+               									<animation>
+               										<HamburgerBackArrowBasicTransition />
+               									</animation>
+            								</JFXHamburger>
+            							</children>
+         							</StackPane>
+         						</control>
+      						</JFXRippler>
+      						<ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+				               <image>
+				                  <Image url="@../images/Bosch-Logo.png" />
+				               </image>
+				            </ImageView>
+      					</leftItems>
+      					<rightItems>
+      						<JFXRippler fx:id="optionsRippler" maskType="CIRCLE" style="-fx-ripple-color:WHITE;">
+         						<control>
+         							<StackPane fx:id="optionsBurger">
+            							<children>
+            								<JFXHamburger styleClass="jfx-options-burger">
+											</JFXHamburger>
+            							</children>
+         							</StackPane>
+         						</control>
+      						</JFXRippler>
+      					</rightItems>
+      				</JFXToolbar>
+      			</children>
+   			</VBox>
+   		</top>
+   
+   		<!-- Content Area -->
+   		<center>
+   			<JFXDrawer fx:id="drawer" defaultDrawerSize="250" direction="LEFT">
+   				<styleClass>
+   					<String fx:value="body" />
+   				</styleClass>
+   			</JFXDrawer>
+   		</center>
+   	</BorderPane>
+   </children>
+</StackPane>
